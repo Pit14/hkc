@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 ng-select{
   margin-top: 0.5em;
   position: center;
@@ -35,7 +36,7 @@ ng-select{
   background-color: #1a1a1a; /*black*/
   color: #e6e6e6; /*white*/
   text-align: center;
-  font-family: monospace;
+  font-family: Perpetua;
 }
 
 .btn {
@@ -51,6 +52,9 @@ ng-select{
 
 .notch {
   margin-left: 0;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
 }
 
 .pv {
@@ -94,4 +98,20 @@ ng-select{
   flex: 1;
 }
 
+.row {
+  display: flex;
+
+  box-orient: horizontal;
+  flex-direction: row;
+
+  box-pack: center;
+  justify-content: center;
+
+  box-align: center;
+  align-items: center;
+
+
+}
+
+.notch {max-width:100%;}
 

@@ -1,18 +1,15 @@
 .flex-container {
   background-color: #F4F7F8;
-//resize: horizontal;
   overflow: hidden;
   display: flex;
-  margin: 1em;
+  /*margin: 1em;*/
 }
 
 .item {
-  margin: 1em;
   padding: 0.5em;
-  min-width: 0;
   background-color: #1a1a1a;
   color: #e6e6e6;
-  font-family: monospace;
+  font-family: Perpetua;
 }
 
 .initial {
@@ -29,6 +26,15 @@
 }
 
 .logo{
-  height: 150px;
-  width: 150px;
+  margin: 0;
+  height: 125px;
+  width: 125px;
+}
+
+.title{
+  text-align: center;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
 }
