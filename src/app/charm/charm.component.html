@@ -1,0 +1,51 @@
+<h2>Charm</h2>
+List : {{selectedCharms.length}}
+<br>
+
+Name : {{selectedCharm.name}}
+
+<div class="charms-container">
+  <div class="charms-list">
+    <ul class="charms">
+      <li *ngFor="let charm of charms"
+          [class.selected]="charm === selectedCharm"
+          (click)="onSelect(charm)">
+        <span class="badge">{{charm.id}}  </span> {{charm.name}}<img src="{{charm.img}}" height="50"/>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="charm details">
+
+<p>
+  Damage Multiplier : {{selectedCharm.damageMultiplier}}
+</p>
+<p>
+  Effect : {{selectedCharm.effect}}
+</p>
+<p>
+  Notches : {{selectedCharm.notches}}
+</p>
+<p>
+  Description : {{selectedCharm.description}}
+</p>
+<p>
+  Soul Gained : Main {{selectedCharm.soulGainedMain}} Reserve {{selectedCharm.soulGainedReserve}}
+</p>
+
+</div>
+
