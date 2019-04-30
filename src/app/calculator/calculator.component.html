@@ -1,34 +1,15 @@
 
-<app-nail (selectedEvent)="receiveSelectedNail($event)"></app-nail>
+<div class='row'>
+
+  <!--<div class='column flex-container'>-->
+<app-nail class='column flex-container' (selectedNailEvent)="receiveSelectedNail($event)"></app-nail>
+  <!--</div>-->
+<app-life-mask  class='column'></app-life-mask>
+<app-charms-equiped  class='column'></app-charms-equiped>
+
+</div>
+
 <!--<app-charm (selectedEvent)="receiveSelectedCharms($event)"></app-charm>-->
+<app-damage-table [selectedNail]="selectedNail"></app-damage-table>
 
-<!--<h2>Calculator</h2>-->
-<!--<table>-->
-  <!--<thead>-->
-  <!--<tr >-->
-    <!--<td>Nail basic attack</td>-->
-    <!--<td><img src="../../assets/img/nail_art/Cyclone_Slash.png" height="50"/>Cyclone Slash </td>-->
-    <!--<td><img src="../../assets/img/nail_art/Dash_Slash.png" height="50"/>Dash Slash </td>-->
-    <!--<td><img src="../../assets/img/nail_art/Great_Slash.png" height="50"/>Great Slash </td>-->
-    <!--<td><img src="../../assets/img/charms/Thorns_of_Agony.png" height="50"/>Thorns of Agony</td>-->
-    <!--<td><img src="../../assets/img/charms/Grubberflys_Elegy.png" height="50"/>Grubberfly's Elegy</td>-->
-    <!--<td><img src="../../assets/img/charms/Thorns_of_Agony.png" height="50"/>Thorns of Agony</td>-->
-    <!--<td><img src="../../assets/img/charms/Thorns_of_Agony.png" height="50"/>Thorns of Agony</td>-->
-    <!--<td><img src="../../assets/img/charms/Thorns_of_Agony.png" height="50"/>Thorns of Agony</td>-->
-    <!--<td><img src="../../assets/img/charms/Thorns_of_Agony.png" height="50"/>Thorns of Agony</td>-->
-  <!--</tr>-->
-
-  <!--</thead>-->
-  <!--<tr >-->
-    <!--<td>{{calculateBasicAttack()}}</td>-->
-    <!--<td>{{calculateCycloneSlashMin()}} - {{calculateCycloneSlashMax()}}</td>-->
-    <!--<td>{{calculateGreatOrDashSlash()}}</td>-->
-    <!--<td>{{calculateGreatOrDashSlash()}}</td>-->
-    <!--<td>{{calculateThornsOfAgony()}}</td> &lt;!&ndash;Thorn of agony, put a If the charm is selected&ndash;&gt;-->
-    <!--<td>{{calculateGrubberflyElegy()}}</td> &lt;!&ndash;Thorn of agony, put a If the charm is selected&ndash;&gt;-->
-    <!--<td>{{calculateThornsOfAgony()}}</td> &lt;!&ndash;Thorn of agony, put a If the charm is selected&ndash;&gt;-->
-    <!--<td>{{calculateThornsOfAgony()}}</td> &lt;!&ndash;Thorn of agony, put a If the charm is selected&ndash;&gt;-->
-    <!--<td>{{calculateThornsOfAgony()}}</td> &lt;!&ndash;Thorn of agony, put a If the charm is selected&ndash;&gt;-->
-    <!--<td>{{calculateThornsOfAgony()}}</td> &lt;!&ndash;Thorn of agony, put a If the charm is selected&ndash;&gt;-->
-  <!--</tr>-->
-<!--</table>-->
+<!--{{selectedNail.name}}-->

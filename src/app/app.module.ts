@@ -12,6 +12,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgSelectModule } from '@ng-select/ng-select';
 import { HeaderComponent } from './header/header.component';
+import { TestComponent } from './test/test.component';
+import { DamageTableComponent } from './damage-table/damage-table.component';
+import { LifeMaskComponent } from './life-mask/life-mask.component';
+import { CharmsEquipedComponent } from './charms-equiped/charms-equiped.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { HeaderComponent } from './header/header.component';
     NailComponent,
     CharmComponent,
     CalculatorComponent,
-    HeaderComponent
+    HeaderComponent,
+    TestComponent,
+    DamageTableComponent,
+    LifeMaskComponent,
+    CharmsEquipedComponent
   ],
   imports: [
     BrowserModule,

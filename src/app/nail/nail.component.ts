@@ -17,14 +17,14 @@ export class NailComponent implements OnInit {
   selectedNail: Nail = this.nails[0];
   // selectedCharm: Charm = this.charms[1];
 
-  @Output() selectedEvent = new EventEmitter<Nail>();
+  @Output() selectedNailEvent = new EventEmitter<Nail>();
 
   constructor() {  }
 
   ngOnInit() {  }
 
   sendSelectedNail() {
-    this.selectedEvent.emit(this.selectedNail);
+    this.selectedNailEvent.emit(this.selectedNail);
   }
   //
   // onChange(nailID) {
