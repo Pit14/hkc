@@ -2,14 +2,15 @@
 
   <div class="flex-container auto">
 
-    <div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>
-    <div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>
-    <div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>
-    <div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>
-    <div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>
-    <div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>
-    <div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>
-    <div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>
+    <div class="auto notch" *ngFor="let charm of selectedCharms"> <img class="notch-img" src="{{charm.img}}"></div>
+    <!--<div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>-->
+    <!--<div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>-->
+    <!--<div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>-->
+    <!--<div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>-->
+    <!--<div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>-->
+    <!--<div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>-->
+    <!--<div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>-->
+    <!--<div class="auto notch"><img class="notch-img" src="../../assets/img/notch.png" /></div>-->
 
   </div>
 
@@ -34,7 +35,7 @@
 </div>
 {{selectedCharms.length}}
 
-<div class="row">
-  <div class="item auto" *ngFor="let charm of selectedCharms"> <img src="{{charm.img}}">{{selectedCharms[0].name}}</div>
-</div>
+<!--<div class="row">-->
+  <!--<div class="item auto" *ngFor="let charm of selectedCharms"> <img src="{{charm.img}}">{{selectedCharms[0].name}}</div>-->
+<!--</div>-->
 
