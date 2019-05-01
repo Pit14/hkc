@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {CHARMS, NAILS} from '../mock-data';
 import {NailComponent} from '../nail/nail.component';
 import {Nail} from '../nail';
+import {Charm} from '../charm';
 
 @Component({
   selector: 'app-calculator',
@@ -12,7 +13,7 @@ export class CalculatorComponent implements OnInit {
 
   selectedNail: Nail = NAILS[0];
 
-  selectedCharms;
+  selectedCharms: Charm[] = [];
 
   constructor() { }
 

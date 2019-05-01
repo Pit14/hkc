@@ -32,3 +32,9 @@
 
   </div>
 </div>
+{{selectedCharms.length}}
+
+<div class="row">
+  <div class="item auto" *ngFor="let charm of selectedCharms"> <img src="{{charm.img}}">{{selectedCharms[0].name}}</div>
+</div>
+

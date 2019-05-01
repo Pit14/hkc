@@ -1,11 +1,11 @@
 <!-- pv -->
 <div  class="flex-container">
   <div class="flex-container-column four">
-    <button class="item auto btn" type="button" onclick="alert('Hello world!')">+</button>
-    <button class="item auto btn" type="button" onclick="alert('Hello world!')">-</button>
+    <button class="item auto btn" type="button" (click)="addLife()">+</button>
+    <button class="item auto btn" type="button" (click)="substractLife()">-</button>
   </div>
   <div class="flex-container-column four">
-    <div class="item one centered_text">Number of life mask : 7</div>
+    <div class="item one centered_text">Number of life mask : {{numberOfLifeMask}}</div>
   </div>
   <img src="../../assets/img/mask.png" width="100px" height="150px" class="item none"/>
 </div>

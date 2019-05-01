@@ -21,7 +21,7 @@ export class CharmComponent implements OnInit {
 
   selectedCharm: Charm = this.charms[0]; // = this.charms[0];
 
-  @Output() selectedEvent = new EventEmitter<Charm[]>();
+  @Output() selectedCharmsEvent = new EventEmitter<Charm[]>();
 
 
   constructor() { }
@@ -32,12 +32,13 @@ export class CharmComponent implements OnInit {
   }
 
   sendSelectedCharms() {
-     this.selectedEvent.emit(this.selectedCharms);
+     this.selectedCharmsEvent.emit(this.selectedCharms);
   }
 
-  onSelect(charm: Charm) {
+  select(charm: Charm) {
     this.selectedCharm = charm;
     this.selectedCharms.push(charm);
     this.sendSelectedCharms();
+    console.log("coocoo");
   }
 }

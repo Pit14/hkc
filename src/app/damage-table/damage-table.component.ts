@@ -12,7 +12,7 @@ export class DamageTableComponent implements OnInit {
   @Input() selectedNail: Nail;
   charms = CHARMS;
 
-  selectedCharms = this.charms; // = this.charms[0];
+  selectedCharms = []; // = this.charms[0];
 
   constructor() { }
 

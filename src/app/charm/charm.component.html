@@ -1,51 +1,52 @@
-<h2>Charm</h2>
+
 List : {{selectedCharms.length}}
-<br>
+<div class="row">
+  <div *ngIf="selectedCharms.length>0">
+    <div class="item auto" *ngFor="let charm of selectedCharms">{{charm.name}}</div>
+</div>
 
-Name : {{selectedCharm.name}}
-
-<div class="charms-container">
-  <div class="charms-list">
-    <ul class="charms">
-      <li *ngFor="let charm of charms"
-          [class.selected]="charm === selectedCharm"
-          (click)="onSelect(charm)">
-        <span class="badge">{{charm.id}}  </span> {{charm.name}}<img src="{{charm.img}}" height="50"/>
-      </li>
-    </ul>
+<div class="row">
+  <!--<div class="charms-container">-->
+    <!--<div class="charms-list">-->
+      <!--<ul class="charms">-->
+        <div class="item auto" *ngFor="let charm of charms"
+            [class.selected]="charm === selectedCharm"
+            (click)="select(charm)">
+          <img src="{{charm.img}}" height="50"/>
+          <div>
+            {{charm.name}}
+          </div>
+        <!--</div>-->
+      <!--</ul>-->
+    <!--</div>-->
   </div>
 </div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="row">
 
-<div class="charm details">
+  <div class="item auto">
+    Damage Multiplier : {{selectedCharm.damageMultiplier}}
+  </div>
+  <div class="item auto">
 
-<p>
-  Damage Multiplier : {{selectedCharm.damageMultiplier}}
-</p>
-<p>
-  Effect : {{selectedCharm.effect}}
-</p>
-<p>
-  Notches : {{selectedCharm.notches}}
-</p>
-<p>
-  Description : {{selectedCharm.description}}
-</p>
-<p>
-  Soul Gained : Main {{selectedCharm.soulGainedMain}} Reserve {{selectedCharm.soulGainedReserve}}
-</p>
+    Effect : {{selectedCharm.effect}}
+  </div>
+
+  <div class="item auto">
+
+    Notches : {{selectedCharm.notches}}
+  </div>
+
+  <div class="item auto">
+
+    Description : {{selectedCharm.description}}
+  </div>
+
+  <div class="item auto">
+
+    Soul Gained : Main {{selectedCharm.soulGainedMain}} Reserve {{selectedCharm.soulGainedReserve}}
+  </div>
+
 
 </div>
 

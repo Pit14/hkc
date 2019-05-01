@@ -2,14 +2,15 @@
 <div class='row'>
 
   <!--<div class='column flex-container'>-->
-<app-nail class='column flex-container' (selectedNailEvent)="receiveSelectedNail($event)"></app-nail>
+  <app-nail class='column flex-container' (selectedNailEvent)="receiveSelectedNail($event)"></app-nail>
   <!--</div>-->
-<app-life-mask  class='column'></app-life-mask>
-<app-charms-equiped  class='column'></app-charms-equiped>
+  <app-life-mask  class='column'></app-life-mask>
+  <app-charms-equiped  class='column' [selectedCharms]="selectedCharms"></app-charms-equiped>
 
 </div>
 
-<!--<app-charm (selectedEvent)="receiveSelectedCharms($event)"></app-charm>-->
+  <app-charm (selectedCharmsEvent)="receiveSelectedCharms($event)"></app-charm>
+
 <app-damage-table [selectedNail]="selectedNail"></app-damage-table>
 
 <!--{{selectedNail.name}}-->
