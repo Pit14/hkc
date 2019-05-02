@@ -11,13 +11,16 @@ import {CHARMS} from '../mock-data';
 export class CharmsEquipedComponent implements OnInit {
 
   @Input() selectedCharms: Charm[];
+  numberOfNotch: number;
 
 
   constructor() { }
 
   ngOnInit() {
-    this.selectedCharms = CHARMS;
+    // this.selectedCharms = CHARMS;
+    this.numberOfNotch = 0;
   }
+
 
 
 }

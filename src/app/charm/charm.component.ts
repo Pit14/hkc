@@ -12,33 +12,44 @@ import {Nail} from '../nail';
 })
 export class CharmComponent implements OnInit {
 
-  // @Input() charm: Charm;
-
   charms = CHARMS;
   selectedCharms: Charm[] = [];
-
-  // ; // this.charms[0];
 
   selectedCharm: Charm = this.charms[0]; // = this.charms[0];
 
   @Output() selectedCharmsEvent = new EventEmitter<Charm[]>();
 
+  numberOfNotches: number;
 
   constructor() { }
 
   ngOnInit() {
    // this.selectedCharms.push(this.charms[0]);
     this.sendSelectedCharms();
+    this.numberOfNotches = 0;
   }
 
   sendSelectedCharms() {
      this.selectedCharmsEvent.emit(this.selectedCharms);
   }
 
+  countNotches() {
+    let x = 0;
+    for (const charm of this.selectedCharms) {
+      x += charm.notches;
+    }
+    this.numberOfNotches = x;
+  }
+
   select(charm: Charm) {
+    if (this.selectedCharms.find(x => x.id === charm.id)) { // If the charm is already equipped, we delete it from the list
+      const index = this.selectedCharms.indexOf(this.selectedCharms.find(x => x.id === charm.id));
+      this.selectedCharms.splice(index, 1);
+    } else { // If the charm isn't equipped, we had it to the list.
+      this.selectedCharms.push(charm);
+    }
     this.selectedCharm = charm;
-    this.selectedCharms.push(charm);
+    this.countNotches();
     this.sendSelectedCharms();
-    console.log("coocoo");
   }
 }
