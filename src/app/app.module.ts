@@ -15,7 +15,9 @@ import { HeaderComponent } from './header/header.component';
 import { TestComponent } from './test/test.component';
 import { DamageTableComponent } from './damage-table/damage-table.component';
 import { LifeMaskComponent } from './life-mask/life-mask.component';
-import { CharmsEquipedComponent } from './charms-equiped/charms-equiped.component';
+import { CharmsEquippedComponent } from './charms-equiped/charms-equipped.component';
+import { NotchesComponent } from './notches/notches.component';
+import { ActiveEffectsComponent } from './active-effects/active-effects.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { CharmsEquipedComponent } from './charms-equiped/charms-equiped.componen
     TestComponent,
     DamageTableComponent,
     LifeMaskComponent,
-    CharmsEquipedComponent
+    CharmsEquippedComponent,
+    NotchesComponent,
+    ActiveEffectsComponent
   ],
   imports: [
     BrowserModule,

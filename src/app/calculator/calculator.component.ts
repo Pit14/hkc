@@ -15,6 +15,8 @@ export class CalculatorComponent implements OnInit {
 
   selectedCharms: Charm[] = [];
 
+  numberOfNotches = 0;
+
   constructor() { }
 
   ngOnInit() {
@@ -26,5 +28,9 @@ export class CalculatorComponent implements OnInit {
 
   receiveSelectedCharms($event) {
     this.selectedCharms = $event;
+  }
+
+  receiveNumberOfNotches($event) {
+    this.numberOfNotches = $event;
   }
 }

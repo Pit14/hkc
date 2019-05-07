@@ -1,0 +1,9 @@
+<div class="item auto">
+  Active effects :
+    <div *ngFor="let charm of selectedCharms">
+      <img src="{{charm.img}}" height="50"/> {{charm.name}} :
+      <div *ngFor="let effect of charm.effect">
+        {{effect}}
+      </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<!--nb charms : {{selectedCharms.length}}-->
+<!--notches : {{numberOfNotches}}-->
+
+<div class="flex-container-column auto">
+  <div class="flex-container auto">
+    <div class="auto notch" *ngFor="let charm of selectedCharms"> <img class="notch-img" src="{{charm.img}}"></div>
+    <div class="auto notch" *ngFor="let i of isFullCheat()"> <img class="notch-img" src="../../assets/img/medium_notch.png"></div>
+  </div>
+
+  <div class="flex-container auto">
+      <div class="auto notch" *ngFor="let i of getNumberOfEquippedNotchesCheat()"> <img class="notch-img" src="../../assets/img/white_notch.png"></div>
+      <div class="auto notch" *ngFor="let i of getNumberOfUnequippedNotchesCheat()"> <img class="notch-img" src="../../assets/img/black_notch.png"></div>
+      <div class="auto notch" *ngFor="let i of getNumberOfOvercharmedNotchesCheat()"> <img class="notch-img" src="../../assets/img/overcharmed_notch.png"></div>
+  </div>
+</div>

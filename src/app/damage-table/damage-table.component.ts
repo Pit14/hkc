@@ -12,7 +12,7 @@ export class DamageTableComponent implements OnInit {
   @Input() selectedNail: Nail;
   charms = CHARMS;
 
-  selectedCharms = []; // = this.charms[0];
+  @Input() selectedCharms; // = []; // = this.charms[0];
 
   constructor() { }
 
@@ -20,38 +20,48 @@ export class DamageTableComponent implements OnInit {
   }
 
   /***
-   *  Return the nail damage * all damage multiplier form the charm list.
+   *  Return the nail damage * fragile strength multiplier (1 if not equipped)
    */
   calculateBasicAttack(): number {
-    if (this.selectedCharms.length > 0) { // If there're charms
+    return Math.ceil(this.selectedNail.damage * this.getFragileStrengthMultiplier());
+  }
 
-      let finalDamageMultiplier = 1;
-
-      for (const charm of this.selectedCharms) { // we iterate every charms
-
-        if (charm.damageMultiplier > 0) { // if an equipped charm has a damage multiplier
-
-          finalDamageMultiplier *= charm.damageMultiplier;
-        }
-      }
-
-      return this.selectedNail.damage * finalDamageMultiplier;
-
-    } else {
-      return this.selectedNail.damage;
-    }
+  /**
+   * If fury of the fallen is equipped. Handle the fragile strength
+   */
+  calculateBasicAttack1HP(): number {
+    return Math.ceil(this.selectedNail.damage * this.getFragileStrengthMultiplier() *
+      this.selectedCharms.find(x => x.name === 'Fury of the Fallen').damageMultiplier);
   }
 
   calculateCycloneSlashMin(): number {
-    return this.selectedNail.damage * 1.25 * 3;
+    return Math.ceil(this.selectedNail.damage * 1.25 * 3);
+  }
+
+  calculateCycloneSlashMin1HP(): number {
+    if (this.isFurryOfTheFallen()) {
+      return Math.ceil(this.selectedNail.damage * 1.25 * 3 * this.selectedCharms.find(x => x.name === 'Fury of the Fallen')
+        .damageMultiplier);
+    }
   }
 
   calculateCycloneSlashMax(): number {
-    return this.selectedNail.damage * 1.25 * 7;
+    return Math.ceil(this.selectedNail.damage * 1.25 * 7);
+  }
+
+  calculateCycloneSlashMax1HP(): number {
+    if (this.isFurryOfTheFallen()) {
+      return Math.ceil(this.selectedNail.damage * 1.25 * 7 * this.selectedCharms.find(x => x.name === 'Fury of the Fallen')
+        .damageMultiplier);
+    }
   }
 
   calculateGreatOrDashSlash(): number {
-    return this.selectedNail.damage * 2.5;
+    return Math.ceil(this.selectedNail.damage * 2.5);
+  }
+
+  calculateGreatOrDashSlash1HP(): number {
+    return Math.ceil(this.selectedNail.damage * 2.5 * this.selectedCharms.find(x => x.name === 'Fury of the Fallen').damageMultiplier);
   }
 
   calculateThornsOfAgony(): number {
@@ -59,7 +69,60 @@ export class DamageTableComponent implements OnInit {
   }
 
   calculateGrubberflyElegy(): number {
-    return this.selectedNail.damage * 0.5;
+    if (this.isGrubberflyElegy()) { // If grubber fly elegy is equipped
+      return Math.ceil( this.selectedNail.damage * this.selectedCharms.find(x => x.name === 'Grubberfly\'s Elegy').damageMultiplier
+        * this.getFragileStrengthMultiplier());
+    }
   }
 
+  calculateGrubberflyElegy1hp(): number {
+    if (this.isGrubberflyElegy()) { // If grubber fly elegy is equipped
+      return Math.ceil( this.selectedNail.damage * this.selectedCharms.find(x => x.name === 'Grubberfly\'s Elegy').damageMultiplier
+        * this.getFragileStrengthMultiplier() * this.getFurryOfTheFallenMultiplier());
+    }
+  }
+
+  /**
+   * return true if thorns of agony is equipped
+   */
+  isThornsOfAgony(): boolean {
+    return this.selectedCharms.find(x => x.name === 'Thorns of Agony');
+  }
+
+  /**
+   * return true if furry of the fallen is equipped
+   */
+  isFurryOfTheFallen(): boolean {
+    return this.selectedCharms.find(x => x.name === 'Fury of the Fallen');
+  }
+
+  /**
+   *  return the damage multiplier of Fury of the Fallen, or 1 if it's not equipped
+   */
+  getFurryOfTheFallenMultiplier(): number {
+    if (this.isFurryOfTheFallen()) { // If fragile Strength is equipped
+      return this.selectedCharms.find(x => x.name === 'Fury of the Fallen').damageMultiplier;
+    } else {
+      return 1;
+    }
+  }
+
+  /**
+   *  return the damage multiplier of fragile strength, or 1 if it's not equipped
+   *  don't affect nail art
+   */
+  getFragileStrengthMultiplier(): number {
+    if (this.selectedCharms.find(x => x.name === 'Fragile Strength')) { // If fragile Strength is equipped
+      return this.selectedCharms.find(x => x.name === 'Fragile Strength').damageMultiplier;
+    } else {
+      return 1;
+    }
+  }
+
+  /**
+   * return the damage of grubber fly if it's equipped, return 0 else
+   */
+  isGrubberflyElegy(): boolean {
+    return this.selectedCharms.find(x => x.name === 'Grubberfly\'s Elegy');
+  }
 }

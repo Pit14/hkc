@@ -1,14 +1,5 @@
 
-<!--List : {{selectedCharms.length}}-->
-<!--<div class="row">-->
-  <!--<div *ngIf="selectedCharms.length>0">-->
-    <!--<div class="item auto" *ngFor="let charm of selectedCharms">{{charm.name}}</div>-->
-<!--</div>-->
-
 <div class="row">
-  <!--<div class="charms-container">-->
-    <!--<div class="charms-list">-->
-      <!--<ul class="charms">-->
         <div class="item auto" *ngFor="let charm of charms"
             [class.selected]="charm === selectedCharm"
             (click)="select(charm)">
@@ -16,9 +7,7 @@
           <div>
             {{charm.name}}
           </div>
-        <!--</div>-->
-      <!--</ul>-->
-    <!--</div>-->
+          <img width="10px" class="notch-img" *ngFor="let i of getNumberOfNotchesCheat(charm)" src="../../assets/img/white_notch.png">
   </div>
 </div>
 

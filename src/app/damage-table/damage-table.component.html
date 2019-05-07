@@ -10,6 +10,8 @@
       </div>
       <div  class="item auto">
         {{calculateBasicAttack()}}
+        <br>
+        <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateBasicAttack1HP()}}</span>
       </div>
     </div>
   </div>
@@ -23,6 +25,8 @@
       </div>
       <div  class="item auto">
         {{calculateCycloneSlashMin()}} - {{calculateCycloneSlashMax()}}
+        <br>
+        <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateCycloneSlashMin1HP()}} - {{calculateCycloneSlashMax1HP()}}</span>
       </div>
     </div>
   </div>
@@ -37,6 +41,8 @@
       </div>
       <div  class="item auto">
         {{calculateGreatOrDashSlash()}}
+        <br>
+        <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateGreatOrDashSlash1HP()}}</span>
       </div>
     </div>
   </div>
@@ -51,11 +57,13 @@
       </div>
       <div  class="item auto">
         {{calculateGreatOrDashSlash()}}
+        <br>
+        <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateGreatOrDashSlash1HP()}}</span>
       </div>
     </div>
   </div>
 
-  <div  class="flex-container">
+  <div *ngIf="isThornsOfAgony()"  class="flex-container">
     <div  class="flex-container-column auto">
 
       <img  width="auto" height="119px" class="item none" src="../../assets/img/charms/Thorns_of_Agony.png"/>
@@ -68,7 +76,7 @@
     </div>
   </div>
 
-  <div  class="flex-container">
+  <div *ngIf="isGrubberflyElegy()"  class="flex-container">
     <div  class="flex-container-column auto">
 
       <img width="auto" height="119px" class="item none" src="../../assets/img/charms/Grubberflys_Elegy.png"/>
@@ -77,6 +85,8 @@
       </div>
       <div  class="item auto">
         {{calculateGrubberflyElegy()}}
+        <br>
+        <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateGrubberflyElegy1hp()}}</span>
       </div>
     </div>
   </div>
