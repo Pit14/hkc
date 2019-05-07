@@ -244,38 +244,37 @@ export const CHARMS: Charm[] = [
     effect: ['Allows "moving" while focusing']
   },
   { id: 34, name: 'Nailmaster\'s Glory', notches: 1,
-    description: 'Unique charm bestowed by the King of Hallownest to his most loyal knight. Scratched and dirty, but still cared for.\n' +
-      'Causes the bearer to emit a heroic odour.',
-    img: '../assets/img/charms/Defenders_Crest.png',
-    effect: ['Spawns toxic clouds that deal 1 damage per tick, the cloud lasts 2.2 seconds and a new one will spawn at the Knight\'s ' +
-    'location every 0.2 seconds',
-      'Unlocks new interactions with certain NPCs']
+    description: 'Contains the passion, skill and regrets of a Nailmaster.\n' +
+    'Increases the bearer\'s mastery of Nail Arts, allowing them to focus their power faster and unleash arts sooner.',
+    img: '../assets/img/charms/Nailmasters_Glory.png',
+    effect: ['Reduces the charge time of Nail Arts to 0.75 seconds (base 1.75, dif -1)']
   },
-  { id: 21, name: 'Defender\'s Crest', notches: 1,
-    description: 'Unique charm bestowed by the King of Hallownest to his most loyal knight. Scratched and dirty, but still cared for.\n' +
-      'Causes the bearer to emit a heroic odour.',
-    img: '../assets/img/charms/Defenders_Crest.png',
-    effect: ['Spawns toxic clouds that deal 1 damage per tick, the cloud lasts 2.2 seconds and a new one will spawn at the Knight\'s ' +
-    'location every 0.2 seconds',
-      'Unlocks new interactions with certain NPCs']
+  { id: 35, name: 'Dream Wielder', notches: 1,
+    description: 'Transient charm created for those who wield the Dream Nail and collect Essence.\n' +
+    'Allows the bearer to charge the Dream Nail faster and collect more SOUL when striking foes.',
+    img: '../assets/img/charms/Dream_Wielder.png',
+    effect: ['Gain +33 additional SOUL when hitting enemies with the Dream Nail (33 to 66)',
+    'Doubles the likelihood of receiving Essence when killing enemies',
+    'Reduces the attack speed of the Dream Nail from 2.4 seconds to 0.9 seconds']
   },
-  { id: 21, name: 'Defender\'s Crest', notches: 1,
-    description: 'Unique charm bestowed by the King of Hallownest to his most loyal knight. Scratched and dirty, but still cared for.\n' +
-      'Causes the bearer to emit a heroic odour.',
-    img: '../assets/img/charms/Defenders_Crest.png',
-    effect: ['Spawns toxic clouds that deal 1 damage per tick, the cloud lasts 2.2 seconds and a new one will spawn at the Knight\'s ' +
-    'location every 0.2 seconds',
-      'Unlocks new interactions with certain NPCs']
+  { id: 36, name: 'Kingsoul', notches: 5,
+    description: 'Holy charm symbolising a union between higher beings. ' +
+      'The bearer will slowly absorb the limitless SOUL contained within.\n' +
+      'Opens the way to a birthplace.',
+    img: '../assets/img/charms/Kingsoul.png',
+    effect: ['Slowly generates 4 SOUL every 2 seconds',
+      'Opens the Birthplace']
   },
-  { id: 21, name: 'Defender\'s Crest', notches: 1,
-    description: 'Unique charm bestowed by the King of Hallownest to his most loyal knight. Scratched and dirty, but still cared for.\n' +
-      'Causes the bearer to emit a heroic odour.',
-    img: '../assets/img/charms/Defenders_Crest.png',
-    effect: ['Spawns toxic clouds that deal 1 damage per tick, the cloud lasts 2.2 seconds and a new one will spawn at the Knight\'s ' +
-    'location every 0.2 seconds',
-      'Unlocks new interactions with certain NPCs']
+  { id: 37, name: 'Void Heart', notches: 0,
+    description: 'An emptiness that was hidden within, now unconstrained. Unifies the void under the bearer\'s will.\n' +
+      'This charm is a part of its bearer and can not be unequipped.',
+    img: '../assets/img/charms/Void_Heart.png',
+    effect: ['Unlocks 4 endings',
+      'Prevents the non-Void Heart ending for the save file',
+    'Renders the Siblings, Void Tendrils and Shade passive',
+    'Allows access to the Godmaster Pantheon of Hallownest']
   },
-  { id: 21, name: 'Defender\'s Crest', notches: 1,
+  { id: 38, name: 'Unbreakable Heart', notches: 1,
     description: 'Unique charm bestowed by the King of Hallownest to his most loyal knight. Scratched and dirty, but still cared for.\n' +
       'Causes the bearer to emit a heroic odour.',
     img: '../assets/img/charms/Defenders_Crest.png',
