@@ -1,13 +1,25 @@
 
 <div class="row">
-        <div class="item auto" *ngFor="let charm of charms"
-            [class.selected]="charm === selectedCharm"
-            (click)="select(charm)">
-          <img src="{{charm.img}}" height="50"/>
-          <div>
-            {{charm.name}}
-          </div>
-          <img width="10px" class="notch-img" *ngFor="let i of getNumberOfNotchesCheat(charm)" src="../../assets/img/white_notch.png">
+
+  <!--<ul class="item auto">-->
+    <!--<li *ngFor="let charm of charms"-->
+        <!--[class.selected]="charm === selectedCharm"-->
+        <!--(click)="select(charm)">-->
+       <!--{{charm.name}}-->
+    <!--</li>-->
+  <!--</ul>-->
+
+
+
+  <div class="item auto"
+        *ngFor="let charm of charms"
+       [class.selected]="isSelected(charm)"
+       (click)="select(charm)">
+    <img src="{{charm.img}}" height="50"/>
+    <div>
+      {{charm.name}}
+    </div>
+    <img width="10px" class="notch-img" *ngFor="let i of getNumberOfNotchesCheat(charm)" src="../../assets/img/white_notch.png">
   </div>
 </div>
 

@@ -76,6 +76,19 @@
     </div>
   </div>
 
+  <div *ngIf="isFlukenest()"  class="flex-container">
+    <div  class="flex-container-column auto">
+
+      <img  width="auto" height="119px" class="item none" src="../../assets/img/charms/Flukenest.png"/>
+      <div class="item auto">
+        Flukenest
+      </div>
+      <div  class="item auto">
+        {{calculateFlukenest()}}
+      </div>
+    </div>
+  </div>
+
   <div *ngIf="isGrubberflyElegy()"  class="flex-container">
     <div  class="flex-container-column auto">
 

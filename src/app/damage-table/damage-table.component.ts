@@ -120,9 +120,44 @@ export class DamageTableComponent implements OnInit {
   }
 
   /**
-   * return the damage of grubber fly if it's equipped, return 0 else
+   * return ttrue if grubber fly if it's equipped, return false else
    */
   isGrubberflyElegy(): boolean {
     return this.selectedCharms.find(x => x.name === 'Grubberfly\'s Elegy');
   }
+
+  /**
+   * return true if flukenest if it's equipped, return false else
+   */
+  isFlukenest(): boolean {
+    return this.selectedCharms.find(x => x.name === 'Flukenest');
+  }
+
+  /**
+   * return damage of Flukenest, to finish when shade soul et vengefull spirit will be finished
+   */
+  calculateFlukenest(): string {
+    let tickDamage = 4;
+    const numberOfFlukes = 9;
+    if (this.isFlukenest()) { // If grubber fly elegy is equipped
+      // if(vengefulSpirit) {
+      //   numberOfFlukes = 9;
+      // } else if(shadeSoul) {
+      //   numberOfFlukes = 16;
+      // }
+      if (this.isShamanStone()) {
+        tickDamage = 5;
+      }
+    }
+
+    return tickDamage + ' damages * ' + numberOfFlukes + ' flukes = ' + tickDamage * numberOfFlukes;
+  }
+
+  /**
+   * return true if gShaman stone is equipped, return false else
+   */
+  isShamanStone(): boolean {
+    return this.selectedCharms.find(x => x.name === 'Shaman Stone');
+  }
+
 }

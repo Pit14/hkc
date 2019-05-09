@@ -68,4 +68,12 @@ export class CharmComponent implements OnInit {
   getNumberOfNotchesCheat(charm: Charm): number[] {
     return Array(charm.notches);
   }
+
+  isSelected(c: Charm): boolean {
+   if (this.selectedCharms.find(x => x.id === c.id) === undefined) {
+     return false;
+   } else {
+     return true;
+   }
+  }
 }
