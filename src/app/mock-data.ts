@@ -274,28 +274,60 @@ export const CHARMS: Charm[] = [
     'Renders the Siblings, Void Tendrils and Shade passive',
     'Allows access to the Godmaster Pantheon of Hallownest']
   },
-  { id: 38, name: 'Unbreakable Heart', notches: 1,
-    description: 'Unique charm bestowed by the King of Hallownest to his most loyal knight. Scratched and dirty, but still cared for.\n' +
-      'Causes the bearer to emit a heroic odour.',
-    img: '../assets/img/charms/Defenders_Crest.png',
-    effect: ['Spawns toxic clouds that deal 1 damage per tick, the cloud lasts 2.2 seconds and a new one will spawn at the Knight\'s ' +
-    'location every 0.2 seconds',
-      'Unlocks new interactions with certain NPCs']
+  { id: 38, name: 'Unbreakable Heart', notches: 2,
+    description: 'Increases the health of the bearer, allowing them to take more damage.\n' +
+    'This charm is unbreakable.',
+    img: '../assets/img/charms/Unbreakable_Heart.png',
+    effect: ['Adds two masks of health']
   },
-  { id: 21, name: 'Defender\'s Crest', notches: 1,
-    description: 'Unique charm bestowed by the King of Hallownest to his most loyal knight. Scratched and dirty, but still cared for.\n' +
-      'Causes the bearer to emit a heroic odour.',
-    img: '../assets/img/charms/Defenders_Crest.png',
-    effect: ['Spawns toxic clouds that deal 1 damage per tick, the cloud lasts 2.2 seconds and a new one will spawn at the Knight\'s ' +
-    'location every 0.2 seconds',
-      'Unlocks new interactions with certain NPCs']
+  { id: 39, name: 'Unbreakable Greed', notches: 2,
+    description: 'Causes the bearer to find more Geo when defeating enemies.\n' +
+    'This charm is unbreakable.',
+    img: '../assets/img/charms/Unbreakable_Greed.png',
+    effect: ['Enemies drop 20-60% more Geo']
   },
-  { id: 21, name: 'Defender\'s Crest', notches: 1,
-    description: 'Unique charm bestowed by the King of Hallownest to his most loyal knight. Scratched and dirty, but still cared for.\n' +
-      'Causes the bearer to emit a heroic odour.',
-    img: '../assets/img/charms/Defenders_Crest.png',
-    effect: ['Spawns toxic clouds that deal 1 damage per tick, the cloud lasts 2.2 seconds and a new one will spawn at the Knight\'s ' +
-    'location every 0.2 seconds',
-      'Unlocks new interactions with certain NPCs']
+  { id: 40, name: 'Unbreakable Strength', notches: 3,
+    description: 'Strengthens the bearer, increasing the damage they deal to enemies with their nail.\n' +
+    'This charm is unbreakable.',
+    img: '../assets/img/charms/Unbreakable_Strength.png',
+    effect: ['Increases Nail damage by 50%']
   },
+  { id: 41, name: 'Dreamshield', notches: 3,
+    description: 'Defensive charm once wielded by a tribe that could shape dreams.\n' +
+      'Conjures a shield that follows the bearer and attempts to protect them.',
+    img: '../assets/img/charms/Dreamshield.png',
+    effect: ['\n' +
+    'Conjures a shield that slowly rotates around the Knight\'s position that will block certain projectiles' +
+    ' and will deal 1x Nail damage when colliding with an enemy']
+  },
+  { id: 42, name: 'Weaversong', notches: 2,
+    description: 'Silken charm containing a song of farewell, left by the Weavers who departed Hallownest for their old home.\n' +
+    'Summons weaverlings to give the lonely bearer some companionship and protection.',
+    img: '../assets/img/charms/Weaversong.png',
+    effect: ['Summons 3 small Weaverlings that attack enemies for 3 damage per hit.']
+  },
+  { id: 43, name: 'Sprintmaster', notches: 1,
+    description: 'Bears the likeness of a strange bug known only as \'The Sprintmaster\'.\n' +
+    'Increases the running speed of the bearer, allowing them to avoid danger or overtake rivals.',
+    img: '../assets/img/charms/Sprintmaster.png',
+    effect: ['Increases run speed by ~20%\n' +
+    '(base 8.3, charm 10.0, dif -1.7)']
+  },
+  { id: 44, name: 'Carefree Melody', notches: 3,
+    description: 'Token commemorating the start of a friendship.\n' +
+    'Contains a song of protection that may defend the bearer from damage.',
+    img: '../assets/img/charms/Carefree_Melody.png',
+    effect: ['Has a chance to block damage that has a chance to activate depending on the amount of stacked hits taken']
+  },
+  { id: 45, name: 'Grimmchild', notches: 2,
+    description: 'Worn by those who take part in the Grimm Troupe\'s Ritual.\n' +
+      'The bearer must seek the Grimmkin and collect their flames. Uncollected flames will appear on the bearer\'s map',
+    img: '../assets/img/charms/Grimmchild.png',
+    effect: ['Marks uncollected flames on the map',
+    'Allows access to the Grimmkin',
+    'Summons a flying companion that will deal varied amounts of damage depending on the level of the Grimmchild',
+    'Allows access to the Grimm and Nightmare King Grimm fights']
+  }
+
+
 ];

@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ActiveEffectsComponent implements OnInit {
 
   @Input() selectedCharms;
+  @Input() selectedCharm;
   constructor() { }
 
   ngOnInit() {

@@ -15,6 +15,8 @@ export class CalculatorComponent implements OnInit {
 
   selectedCharms: Charm[] = [];
 
+  selectedCharm: Charm;
+
   numberOfNotches = 0;
 
   constructor() { }
@@ -28,6 +30,10 @@ export class CalculatorComponent implements OnInit {
 
   receiveSelectedCharms($event) {
     this.selectedCharms = $event;
+  }
+
+  receiveSelectedCharm($event) {
+    this.selectedCharm = $event;
   }
 
   receiveNumberOfNotches($event) {

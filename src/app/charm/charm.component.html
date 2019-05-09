@@ -1,16 +1,5 @@
 
 <div class="row">
-
-  <!--<ul class="item auto">-->
-    <!--<li *ngFor="let charm of charms"-->
-        <!--[class.selected]="charm === selectedCharm"-->
-        <!--(click)="select(charm)">-->
-       <!--{{charm.name}}-->
-    <!--</li>-->
-  <!--</ul>-->
-
-
-
   <div class="item auto"
         *ngFor="let charm of charms"
        [class.selected]="isSelected(charm)"
@@ -21,33 +10,5 @@
     </div>
     <img width="10px" class="notch-img" *ngFor="let i of getNumberOfNotchesCheat(charm)" src="../../assets/img/white_notch.png">
   </div>
-</div>
-
-<div class="row">
-
-  <div class="item auto">
-    Damage Multiplier : {{selectedCharm.damageMultiplier}}
-  </div>
-  <div class="item auto">
-
-    Effect : {{selectedCharm.effect}}
-  </div>
-
-  <div class="item auto">
-
-    Notches : {{selectedCharm.notches}}
-  </div>
-
-  <div class="item auto">
-
-    Description : {{selectedCharm.description}}
-  </div>
-
-  <div class="item auto">
-
-    Soul Gained : Main {{selectedCharm.soulGainedMain}} Reserve {{selectedCharm.soulGainedReserve}}
-  </div>
-
-
 </div>
 

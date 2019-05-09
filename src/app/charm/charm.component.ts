@@ -14,6 +14,7 @@ export class CharmComponent implements OnInit {
   selectedCharm: Charm = this.charms[0];
 
   @Output() selectedCharmsEvent = new EventEmitter<Charm[]>();
+  @Output() selectedCharmEvent = new EventEmitter<Charm>();
   @Input() numberOfNotches: number;
 
   constructor() { }
@@ -24,6 +25,10 @@ export class CharmComponent implements OnInit {
 
   sendSelectedCharms() {
     this.selectedCharmsEvent.emit(this.selectedCharms);
+  }
+
+  sendSelectedCharm() {
+    this.selectedCharmEvent.emit(this.selectedCharm);
   }
 
   select(charm: Charm) {
@@ -47,6 +52,7 @@ export class CharmComponent implements OnInit {
       }
     }
     this.selectedCharm = charm;
+    this.sendSelectedCharm();
   }
 
   countNotches(): number {

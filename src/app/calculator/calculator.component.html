@@ -8,9 +8,10 @@
 
 </div>
 
-  <app-charm #charm (selectedCharmsEvent)="receiveSelectedCharms($event)" [numberOfNotches]="numberOfNotches"></app-charm>
+<app-charm #charm (selectedCharmsEvent)="receiveSelectedCharms($event)"
+           (selectedCharmEvent)="receiveSelectedCharm($event)" [numberOfNotches]="numberOfNotches"></app-charm>
 
-<app-active-effects [selectedCharms]="selectedCharms"></app-active-effects>
+<app-active-effects [selectedCharms]="selectedCharms" [selectedCharm]="selectedCharm"></app-active-effects>
 
 <app-damage-table [selectedNail]="selectedNail" [selectedCharms]="selectedCharms" ></app-damage-table>
 
