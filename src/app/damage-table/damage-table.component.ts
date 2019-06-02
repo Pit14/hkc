@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {CHARMS, NAILS} from '../mock-data';
 import {Nail} from '../nail';
+import {tick} from '@angular/core/testing';
 
 @Component({
   selector: 'app-damage-table',
@@ -136,21 +137,49 @@ export class DamageTableComponent implements OnInit {
   /**
    * return damage of Flukenest, to finish when shade soul et vengefull spirit will be finished
    */
-  calculateFlukenest(): string {
+  calculateFlukenest(): string { // TODO
+
     let tickDamage = 4;
     const numberOfFlukes = 9;
-    if (this.isFlukenest()) { // If grubber fly elegy is equipped
-      // if(vengefulSpirit) {
-      //   numberOfFlukes = 9;
-      // } else if(shadeSoul) {
-      //   numberOfFlukes = 16;
-      // }
-      if (this.isShamanStone()) {
-        tickDamage = 5;
+
+    if (this.isFlukenest()) { // If flukenest is equipped
+      if (this.isVengefulSpirit()) {
+        if (this.isDefendersCrest()) {
+          if (this.isShamanStone()) { // vengeful spirit + defenders crest + shaman stone
+            tickDamage = 5;
+            return '58–60 total: 2/tick';
+          } else { // vengeful spirit + defenders crest
+            return '44–46 total: 2/tick';
+          }
+        } else {
+          if (this.isShamanStone()) { // vengeful spirit + shaman stone
+            return '45 total : 5 × 9 Flukes';
+          } else { // Vengeful spirit only
+            return '36 total : 4 × 9 Flukes';
+          }
+        }
+      } else if (this.isShadeSoul()) {
+
+        if (this.isDefendersCrest()) {
+
+          if (this.isShamanStone()) { // shade soul + defenders crest + shaman stone
+            return tickDamage + ' damages * ' + numberOfFlukes + ' flukes = ' + tickDamage * numberOfFlukes;
+          } else { // shade soul + defenders crest
+            return tickDamage + ' damages * ' + numberOfFlukes + ' flukes = ' + tickDamage * numberOfFlukes;
+          }
+
+        } else {
+
+          if (this.isShamanStone()) { // shade soul + shaman stone
+            return tickDamage + ' damages * ' + numberOfFlukes + ' flukes = ' + tickDamage * numberOfFlukes;
+          } else { // shade soul
+            return tickDamage + ' damages * ' + numberOfFlukes + ' flukes = ' + tickDamage * numberOfFlukes;
+          }
+
+        }
+
       }
     }
-
-    return tickDamage + ' damages * ' + numberOfFlukes + ' flukes = ' + tickDamage * numberOfFlukes;
   }
 
   /**
@@ -160,4 +189,75 @@ export class DamageTableComponent implements OnInit {
     return this.selectedCharms.find(x => x.name === 'Shaman Stone');
   }
 
+  calculateShadeSoul(): number {
+    if (this.isShamanStone()) {
+      return  Math.ceil(30 * 1.33);
+    } else {
+      return 30;
+    }
+  }
+
+  calculateVengefulSpirit(): number {
+    if (this.isShamanStone()) {
+      return  Math.ceil(15 * 1.33);
+    } else {
+      return 15;
+    }
+  }
+
+  calculateHowlingWraiths(): number {
+    if (this.isShamanStone()) {
+      return  Math.ceil(30 * 1.5);
+    } else {
+      return 30;
+    }
+  }
+
+  calculateAbyssShriek(): number {
+    if (this.isShamanStone()) {
+      return  Math.ceil(80 * 1.5);
+    } else {
+      return 80;
+    }
+  }
+
+  calculateDesolateDive(): number {
+    if (this.isShamanStone()) {
+      return  Math.ceil(35 * 1.33);
+    } else {
+      return 35;
+    }
+  }
+
+  calculateDescendingDark(): number {
+    if (this.isShamanStone()) {
+      return  Math.ceil(60 * 1.33);
+    } else {
+      return 60;
+    }
+  }
+
+
+  /**
+   * return true if Defender crest if it's equipped, return false else
+   */
+  isDefendersCrest(): boolean {
+    return this.selectedCharms.find(x => x.name === 'Defender\'s Crest');
+  }
+
+  /**
+   * return damage of Defender's crest
+   */
+  calculateDefendersCrest(): string {
+    const tickDamage = 1;
+    return tickDamage + ' damage per tick';
+  }
+
+  isShadeSoul(): boolean {
+    return true;
+  }
+
+  isVengefulSpirit(): boolean {
+    return false;
+  }
 }
