@@ -45,6 +45,10 @@ ng-select{
   font-family: Perpetua;
 }
 
+.damage-cell {
+  max-width: 10em;
+}
+
 .active-effects {
   text-align: left;
 }

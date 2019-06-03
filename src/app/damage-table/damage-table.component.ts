@@ -139,41 +139,61 @@ export class DamageTableComponent implements OnInit {
    */
   calculateFlukenest(): string { // TODO
 
-    let tickDamage = 4;
-    const numberOfFlukes = 9;
-
     if (this.isFlukenest()) { // If flukenest is equipped
       if (this.isVengefulSpirit()) {
+
         if (this.isDefendersCrest()) {
+
           if (this.isShamanStone()) { // vengeful spirit + defenders crest + shaman stone
-            tickDamage = 5;
-            return '58–60 total: 2/tick';
+            return 'Can be combined with Defender\'s Crest to release a large toxic fluke that explodes on contact with an enemy, ' +
+              'releasing a large toxic cloud.' +
+              'Shaman Stone will not affect the damage of Defender\'s Crest + Flukenest nor will affect the amount of time that' +
+              ' the cloud lasts but will increase the frequency of the ticks allowing for 29 ticks.' +
+              '58–60 total : 2 damages × 29 ticks';
           } else { // vengeful spirit + defenders crest
-            return '44–46 total: 2/tick';
+            return 'Can be combined with Defender\'s Crest to release a large toxic fluke that explodes on contact with an enemy, ' +
+              'releasing a large toxic cloud.' +
+              '44–46 total : 2/tick';
           }
+
         } else {
+
           if (this.isShamanStone()) { // vengeful spirit + shaman stone
-            return '45 total : 5 × 9 Flukes';
+            return 'Shaman Stone increases the damage to 5, ' +
+              'resulting in a total damage of 45 with Vengeful Spirit. ' +
+              'Fluke projectiles are also bigger.' +
+              '45 total : 5 × 9 Flukes';
           } else { // Vengeful spirit only
             return '36 total : 4 × 9 Flukes';
           }
+
         }
+
       } else if (this.isShadeSoul()) {
 
         if (this.isDefendersCrest()) {
 
           if (this.isShamanStone()) { // shade soul + defenders crest + shaman stone
-            return tickDamage + ' damages * ' + numberOfFlukes + ' flukes = ' + tickDamage * numberOfFlukes;
+            return 'Can be combined with Defender\'s Crest to release a large toxic fluke that explodes on contact with an enemy, ' +
+              'releasing a large toxic cloud. \n' +
+              'Shaman Stone will not affect the damage of Defender\'s Crest + Flukenest nor will affect the amount of time that the ' +
+              'cloud lasts but will increase the frequency of the ticks allowing for 29 ticks.' +
+              '58 total : 4/tick';
           } else { // shade soul + defenders crest
-            return tickDamage + ' damages * ' + numberOfFlukes + ' flukes = ' + tickDamage * numberOfFlukes;
+            return 'Can be combined with Defender\'s Crest to release a large toxic fluke that explodes on contact with an enemy, ' +
+              'releasing a large toxic cloud. \n' +
+              '44 total : 4/tick';
           }
 
         } else {
 
           if (this.isShamanStone()) { // shade soul + shaman stone
-            return tickDamage + ' damages * ' + numberOfFlukes + ' flukes = ' + tickDamage * numberOfFlukes;
+            return 'Shaman Stone increases the damage to 5, ' +
+              'resulting in a total damage of 80 with Shade Soul. ' +
+              'Fluke projectiles are also bigger.' +
+              '80 total : 5 × 16 Flukes';
           } else { // shade soul
-            return tickDamage + ' damages * ' + numberOfFlukes + ' flukes = ' + tickDamage * numberOfFlukes;
+            return '64 total : 4 × 16 Flukes';
           }
 
         }
@@ -249,8 +269,8 @@ export class DamageTableComponent implements OnInit {
    * return damage of Defender's crest
    */
   calculateDefendersCrest(): string {
-    const tickDamage = 1;
-    return tickDamage + ' damage per tick';
+    return 'Spawns toxic clouds that deal 1 damage per tick, the cloud lasts 2.2 seconds and a new one will spawn at the Knight\'s ' +
+      'location every 0.2 seconds';
   }
 
   isShadeSoul(): boolean {
