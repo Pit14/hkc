@@ -1,6 +1,7 @@
 
 <div class="row">
 
+  <!--base attack damage-->
   <div  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -16,6 +17,7 @@
     </div>
   </div>
 
+  <!--shade soul damage-->
   <div  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -30,6 +32,7 @@
     </div>
   </div>
 
+  <!--vengeful spirit damage-->
   <div  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -44,6 +47,7 @@
     </div>
   </div>
 
+  <!--desolate dive damage-->
   <div  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -58,6 +62,7 @@
     </div>
   </div>
 
+  <!--descending dark damage-->
   <div  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -72,6 +77,7 @@
     </div>
   </div>
 
+  <!--howling wraiths damage-->
   <div  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -86,6 +92,7 @@
     </div>
   </div>
 
+  <!--abyss shriek damage-->
   <div  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -100,6 +107,7 @@
     </div>
   </div>
 
+  <!--cyclone slash damage-->
   <div  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -115,6 +123,7 @@
     </div>
   </div>
 
+  <!--dash slash damage-->
   <div  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -131,7 +140,7 @@
     </div>
   </div>
 
-
+  <!--great slash damage-->
   <div  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -147,6 +156,7 @@
     </div>
   </div>
 
+  <!--thorns of agony-->
   <div *ngIf="isThornsOfAgony()"  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -160,6 +170,7 @@
     </div>
   </div>
 
+  <!--flukenest damage-->
   <div *ngIf="isFlukenest()"  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -173,6 +184,7 @@
     </div>
   </div>
 
+  <!--defender crest damage-->
   <div *ngIf="isDefendersCrest()"  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -186,6 +198,7 @@
     </div>
   </div>
 
+  <!--grubberfly elegy damage finished -->
   <div *ngIf="isGrubberflyElegy()"  class="flex-container">
     <div  class="flex-container-column auto damage-cell">
 
@@ -200,5 +213,53 @@
       </div>
     </div>
   </div>
+
+  <!--glowing womb finished-->
+  <div *ngIf="isGlowingWomb()"  class="flex-container">
+    <div  class="flex-container-column auto damage-cell">
+
+      <img width="auto" height="119px" class="item none" src="assets/img/charms/Glowing_Womb.png"/>
+      <div class="item auto">
+        Glowing Womb
+      </div>
+      <div  class="item auto">
+        {{calculateGlowingWomb()}}
+        <br>
+        <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateGlowingWomb1hp()}}</span>
+      </div>
+    </div>
+  </div>
+
+  <!--Spore Shroom finished -->
+  <div *ngIf="isSporeShroom()"  class="flex-container">
+    <div  class="flex-container-column auto damage-cell">
+
+      <img width="auto" height="119px" class="item none" src="assets/img/charms/Spore_Shroom.png"/>
+      <div class="item auto">
+        Glowing Womb
+      </div>
+      <div  class="item auto">
+        {{calculateSporeShroom()}}
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <!--Shadow dash finished-->
+  <div *ngIf="isSharpShadow()"  class="flex-container">
+    <div  class="flex-container-column auto damage-cell">
+
+      <img width="auto" height="119px" class="item none" src="assets/img/charms/Sharp_Shadow.png"/>
+      <div class="item auto">
+        Sharp Shadow
+      </div>
+      <div  class="item auto">
+        {{calculateSharpShadow()}}
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <!--unbreakable strength pas sur les nails art, que sur le nail de base.-->
 
 </div>

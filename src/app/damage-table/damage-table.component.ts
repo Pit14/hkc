@@ -269,8 +269,82 @@ export class DamageTableComponent implements OnInit {
    * return damage of Defender's crest
    */
   calculateDefendersCrest(): string {
-    return 'Spawns toxic clouds that deal 1 damage per tick, the cloud lasts 2.2 seconds and a new one will spawn at the Knight\'s ' +
-      'location every 0.2 seconds';
+    return '1 per tick';
+  }
+
+  /**
+   * return true if glowing womb if it's equipped, return false else
+   */
+  isGlowingWomb(): boolean {
+    return this.selectedCharms.find(x => x.name === 'Glowing Womb');
+  }
+
+  /**
+   * display the damage of the glowing womb, take into account if defender's crest is equipped
+   */
+  calculateGlowingWomb(): string {
+
+      if (this.isDefendersCrest()) {
+          return '8-9 per fly total:\n' +
+        '4+1/tick（4-5ticks）';
+    } else {
+      return '9 per fly';
+    }
+  }
+
+  /**
+   * display the damage of the glowing womb when furry of the fallen is equuipped, take into account if defender's crest is equipped
+   */
+  calculateGlowingWomb1hp(): string {
+    if (this.isFurryOfTheFallen()) {
+
+      if (this.isDefendersCrest()) {
+
+        return '13-14 per fly total:\n' +
+          '9+1/tick（4-5ticks）';
+
+      } else {
+        return '14 per fly';
+      }
+
+    }
+  }
+
+
+  /**
+   * return true if spore shroom is equipped, return false else
+   */
+  isSporeShroom(): boolean {
+    return this.selectedCharms.find(x => x.name === 'Spore Shroom');
+  }
+
+  /**
+   * display the damage of the spore shroom, take into account if defender's crest is equipped
+   */
+  calculateSporeShroom(): string {
+
+    if (this.isDefendersCrest()) {
+      return '40 total:\n' +
+      '2/tick（20ticks）';
+    } else {
+      return '28 total:\n' +
+        '1/tick（28ticks）';
+    }
+  }
+
+  /**
+   * return true ifsharp shadow is equipped, return false else
+   */
+  isSharpShadow(): boolean {
+    return this.selectedCharms.find(x => x.name === 'Sharp Shadow');
+  }
+
+  /**
+   * display the damage of the sharp shadow
+   */
+  calculateSharpShadow(): number {
+
+    return this.selectedNail.damage;
   }
 
   isShadeSoul(): boolean {

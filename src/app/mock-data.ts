@@ -171,7 +171,7 @@ export const CHARMS: Charm[] = [
     description: 'A charm containing a crystal lens.\n' +
     'Increases the speed of focusing SOUL, allowing the bearer to heal damage faster.',
     img: 'assets/img/charms/Quick_Focus.png',
-    effect: ['Focus casts twice as fas']
+    effect: ['Focus casts twice as fast']
   },
   { id: 24, name: 'Deep Focus', notches: 4,
     description: 'Naturally formed within a crystal over a long period. Draws in SOUL from the surrounding air.\n' +
