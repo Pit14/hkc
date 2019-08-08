@@ -286,7 +286,7 @@ export const CHARMS: Charm[] = [
     img: 'assets/img/charms/Unbreakable_Greed.png',
     effect: ['Enemies drop 20-60% more Geo']
   },
-  { id: 40, name: 'Unbreakable Strength', notches: 3,
+  { id: 40, name: 'Unbreakable Strength', notches: 3, damageMultiplier: 1.5,
     description: 'Strengthens the bearer, increasing the damage they deal to enemies with their nail.\n' +
     'This charm is unbreakable.',
     img: 'assets/img/charms/Unbreakable_Strength.png',

@@ -31,6 +31,10 @@ export class CharmComponent implements OnInit {
     this.selectedCharmEvent.emit(this.selectedCharm);
   }
 
+  /**
+   * add a new charme to the list of equipped charms
+   * @param charm the charm we just clicked on
+   */
   select(charm: Charm) {
     if (this.selectedCharms.find(x => x.id === charm.id)) { // If the charm is already equipped, we delete it from the list
       const index = this.selectedCharms.indexOf(this.selectedCharms.find(x => x.id === charm.id));
@@ -43,8 +47,11 @@ export class CharmComponent implements OnInit {
         // we are full we do nothing lol
       } else if (this.countNotches() + charm.notches <= this.numberOfNotches) { // ok trkl on equip
 
+        this.checkFragileUnbreakable(charm);
+
         this.selectedCharms.push(charm);
         this.sendSelectedCharms();
+
       } else { // Getting overcharmed
 
         this.selectedCharms.push(charm);
@@ -53,6 +60,33 @@ export class CharmComponent implements OnInit {
     }
     this.selectedCharm = charm;
     this.sendSelectedCharm();
+  }
+
+  /**
+   * If we got an unbrealable or fragile charm, we deactivate the opposite if equipped, as we can't equipped simultaneously a fragile and
+   * an unbreakable charm.
+   * @param charm the charm we just clicked on
+   */
+  checkFragileUnbreakable(charm: Charm) {
+    if (charm.name === 'Unbreakable Strength' && this.selectedCharms.find(x => x.name === 'Fragile Strength')) {
+      const index = this.selectedCharms.indexOf(this.selectedCharms.find(x => x.name === 'Fragile Strength'));
+      this.selectedCharms.splice(index, 1);
+    } else if (charm.name === 'Fragile Strength' && this.selectedCharms.find(x => x.name === 'Unbreakable Strength')) {
+      const index = this.selectedCharms.indexOf(this.selectedCharms.find(x => x.name === 'Unbreakable Strength'));
+      this.selectedCharms.splice(index, 1);
+    } else if (charm.name === 'Unbreakable Greed' && this.selectedCharms.find(x => x.name === 'Fragile Greed')) {
+      const index = this.selectedCharms.indexOf(this.selectedCharms.find(x => x.name === 'Fragile Greed'));
+      this.selectedCharms.splice(index, 1);
+    } else if (charm.name === 'Fragile Greed' && this.selectedCharms.find(x => x.name === 'Unbreakable Greed')) {
+      const index = this.selectedCharms.indexOf(this.selectedCharms.find(x => x.name === 'Unbreakable Greed'));
+      this.selectedCharms.splice(index, 1);
+    } else if (charm.name === 'Unbreakable Heart' && this.selectedCharms.find(x => x.name === 'Fragile Heart')) {
+      const index = this.selectedCharms.indexOf(this.selectedCharms.find(x => x.name === 'Fragile Heart'));
+      this.selectedCharms.splice(index, 1);
+    } else if (charm.name === 'Fragile Heart' && this.selectedCharms.find(x => x.name === 'Unbreakable Heart')) {
+      const index = this.selectedCharms.indexOf(this.selectedCharms.find(x => x.name === 'Unbreakable Heart'));
+      this.selectedCharms.splice(index, 1);
+    }
   }
 
   countNotches(): number {

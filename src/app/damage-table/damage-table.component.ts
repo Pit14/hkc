@@ -24,14 +24,14 @@ export class DamageTableComponent implements OnInit {
    *  Return the nail damage * fragile strength multiplier (1 if not equipped)
    */
   calculateBasicAttack(): number {
-    return Math.ceil(this.selectedNail.damage * this.getFragileStrengthMultiplier());
+    return Math.ceil(this.selectedNail.damage * this.getFragileStrengthMultiplier() * this.getUnbreakableStrengthMultiplier());
   }
 
   /**
    * If fury of the fallen is equipped. Handle the fragile strength
    */
   calculateBasicAttack1HP(): number {
-    return Math.ceil(this.selectedNail.damage * this.getFragileStrengthMultiplier() *
+    return Math.ceil(this.selectedNail.damage * this.getFragileStrengthMultiplier() * this.getUnbreakableStrengthMultiplier() *
       this.selectedCharms.find(x => x.name === 'Fury of the Fallen').damageMultiplier);
   }
 
@@ -115,6 +115,18 @@ export class DamageTableComponent implements OnInit {
   getFragileStrengthMultiplier(): number {
     if (this.selectedCharms.find(x => x.name === 'Fragile Strength')) { // If fragile Strength is equipped
       return this.selectedCharms.find(x => x.name === 'Fragile Strength').damageMultiplier;
+    } else {
+      return 1;
+    }
+  }
+
+  /**
+   *  return the damage multiplier of fragile strength, or 1 if it's not equipped
+   *  don't affect nail art
+   */
+  getUnbreakableStrengthMultiplier(): number {
+    if (this.selectedCharms.find(x => x.name === 'Unbreakable Strength')) { // If fragile Strength is equipped
+      return this.selectedCharms.find(x => x.name === 'Unbreakable Strength').damageMultiplier;
     } else {
       return 1;
     }
@@ -345,6 +357,55 @@ export class DamageTableComponent implements OnInit {
   calculateSharpShadow(): number {
 
     return this.selectedNail.damage;
+  }
+
+  /**
+   * return true if Dreamshield is equipped, return false else
+   */
+  isDreamshield(): boolean {
+    return this.selectedCharms.find(x => x.name === 'Dreamshield');
+  }
+
+  /**
+   * display the damage of the Dreamshield
+   */
+  calculateDreamshield(): string {
+    return this.selectedNail.damage.toString() + ' damages when colliding with an ennemy';
+  }
+
+
+  /**
+   * return true if Weaversong is equipped, return false else
+   */
+  isWeaversong(): boolean {
+    return this.selectedCharms.find(x => x.name === 'Weaversong');
+  }
+
+  /**
+   * display the damage of the Weaversong
+   */
+  calculateWeaversong(): string {
+
+    return '3 per spider';
+  }
+
+  /**
+   * return true if Grimmchild is equipped, return false else
+   */
+  isGrimmchild(): boolean {
+    return this.selectedCharms.find(x => x.name === 'Grimmchild');
+  }
+
+  /**
+   * display the damage of the Grimmchild
+   */
+  calculateGrimmchild(): string {
+    return 'Lv 1 : no damage\n' +
+      'Lv 2 : 5 per shot\n' +
+      'Lv 3 : 8 per shot\n' +
+      'Lv 4 : 11 per shot';
+// TODO : \n deconne !
+
   }
 
   isShadeSoul(): boolean {

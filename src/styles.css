@@ -107,6 +107,12 @@ ng-select{
   resize: none;
 }
 
+.auto-damage {
+  flex: auto;
+  resize: none;
+  /*background-color: inherit;*/
+}
+
 .none {
   flex: none;
 }
@@ -157,3 +163,8 @@ ng-select{
   width: 125px;
   vertical-align: middle;
 }
+
+.light-bg{
+  background-color: #4d4d4d;
+}
+

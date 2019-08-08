@@ -1,265 +1,265 @@
-
+<h2 class="item auto title">Your damage</h2>
 <div class="row">
-
   <!--base attack damage-->
-  <div  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div  class="item auto-damage">
 
-      <img width="auto" height="119px" class="item none" src="{{selectedNail.img}}"/>
-      <div class="item auto">
-        Nail damage
-      </div>
-      <div  class="item auto">
-        {{calculateBasicAttack()}}
-        <br>
-        <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateBasicAttack1HP()}}</span>
-      </div>
-    </div>
+        <img width="auto" height="119px" class="item none" src="{{selectedNail.img}}"/>
+        <div class="item auto light-bg">
+          Nail damage
+        </div>
+        <div  class="item auto light-bg">
+          {{calculateBasicAttack()}}
+          <br>
+          <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateBasicAttack1HP()}}</span>
+        </div>
   </div>
 
   <!--shade soul damage-->
-  <div  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div  class="item auto-damage">
 
       <img width="auto" height="119px" class="item none" src="assets/img/spells/Shade_Soul_Icon.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Shade Soul
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateShadeSoul()}}
         <br>
       </div>
-    </div>
   </div>
 
   <!--vengeful spirit damage-->
-  <div  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div  class="item auto-damage">
 
       <img width="auto" height="119px" class="item none" src="assets/img/spells/Vengeful_Spirit_Icon.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Vengeful Spirit
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateVengefulSpirit()}}
         <br>
       </div>
-    </div>
   </div>
 
   <!--desolate dive damage-->
-  <div  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
-
+  <div  class="item auto-damage">
       <img width="auto" height="119px" class="item none" src="assets/img/spells/Desolate_Dive_Icon.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Desolate Dive
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateDesolateDive()}}
         <br>
       </div>
-    </div>
   </div>
 
   <!--descending dark damage-->
-  <div  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div  class="item auto-damage">
 
       <img width="auto" height="119px" class="item none" src="assets/img/spells/Descending_Dark_Icon.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Descending Dark
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateDescendingDark()}}
         <br>
       </div>
-    </div>
   </div>
 
   <!--howling wraiths damage-->
-  <div  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div  class="item auto-damage">
 
       <img width="auto" height="119px" class="item none" src="assets/img/spells/Howling_Wraiths_Icon.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Howling Wraiths
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateHowlingWraiths()}}
         <br>
       </div>
     </div>
-  </div>
 
   <!--abyss shriek damage-->
-  <div  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div  class="item auto-damage">
 
       <img width="auto" height="119px" class="item none" src="assets/img/spells/Abyss_Shriek_Icon.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Abyss Shriek
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateAbyssShriek()}}
         <br>
       </div>
-    </div>
   </div>
 
   <!--cyclone slash damage-->
-  <div  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div  class="item auto-damage">
 
       <img height="119px" class="item none" src="assets/img/nail_art/Cyclone_Slash.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Cyclone Slash
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateCycloneSlashMin()}} - {{calculateCycloneSlashMax()}}
         <br>
         <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateCycloneSlashMin1HP()}} - {{calculateCycloneSlashMax1HP()}}</span>
       </div>
-    </div>
   </div>
 
   <!--dash slash damage-->
-  <div  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div  class="item auto-damage">
 
       <img width="auto" height="119px" class="item none" src="assets/img/nail_art/Dash_Slash.png"/>
 
-      <div class="item auto">
+      <div class="item auto light-bg">
         Dash Slash
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateGreatOrDashSlash()}}
         <br>
         <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateGreatOrDashSlash1HP()}}</span>
       </div>
     </div>
-  </div>
 
   <!--great slash damage-->
-  <div  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div  class="item auto-damage">
 
       <img width="auto" height="119px" class="item none" src="assets/img/nail_art/Great_Slash.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Great Slash
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateGreatOrDashSlash()}}
         <br>
         <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateGreatOrDashSlash1HP()}}</span>
       </div>
-    </div>
   </div>
 
   <!--thorns of agony-->
-  <div *ngIf="isThornsOfAgony()"  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div *ngIf="isThornsOfAgony()"  class="item auto-damage">
 
       <img  width="auto" height="119px" class="item none" src="assets/img/charms/Thorns_of_Agony.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Thorns of agony
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateThornsOfAgony()}}
       </div>
     </div>
-  </div>
 
   <!--flukenest damage-->
-  <div *ngIf="isFlukenest()"  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div *ngIf="isFlukenest()"  class="item auto-damage">
 
       <img  width="auto" height="119px" class="item auto" src="assets/img/charms/Flukenest.png"/>
-      <div class="item auto damage-cell">
+      <div class="item auto light-bg damage-cell">
         Flukenest
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateFlukenest()}}
       </div>
     </div>
-  </div>
-
   <!--defender crest damage-->
-  <div *ngIf="isDefendersCrest()"  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div *ngIf="isDefendersCrest()"  class="item auto-damage">
 
       <img  width="auto" height="119px" class="item auto" src="assets/img/charms/Defenders_Crest.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Defender's Crest
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateDefendersCrest()}}
       </div>
     </div>
-  </div>
 
   <!--grubberfly elegy damage finished -->
-  <div *ngIf="isGrubberflyElegy()"  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div *ngIf="isGrubberflyElegy()"  class="item auto-damage">
 
       <img width="auto" height="119px" class="item none" src="assets/img/charms/Grubberflys_Elegy.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Grubberfly's Elegy
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateGrubberflyElegy()}}
         <br>
         <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateGrubberflyElegy1hp()}}</span>
       </div>
     </div>
-  </div>
 
   <!--glowing womb finished-->
-  <div *ngIf="isGlowingWomb()"  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div *ngIf="isGlowingWomb()"  class="item auto-damage">
 
       <img width="auto" height="119px" class="item none" src="assets/img/charms/Glowing_Womb.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Glowing Womb
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateGlowingWomb()}}
         <br>
         <span *ngIf="isFurryOfTheFallen()">1HP : {{calculateGlowingWomb1hp()}}</span>
       </div>
     </div>
-  </div>
 
   <!--Spore Shroom finished -->
-  <div *ngIf="isSporeShroom()"  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div *ngIf="isSporeShroom()"  class="item auto-damage">
 
       <img width="auto" height="119px" class="item none" src="assets/img/charms/Spore_Shroom.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Glowing Womb
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateSporeShroom()}}
         <br>
       </div>
-    </div>
   </div>
 
   <!--Shadow dash finished-->
-  <div *ngIf="isSharpShadow()"  class="flex-container">
-    <div  class="flex-container-column auto damage-cell">
+  <div *ngIf="isSharpShadow()"  class="item auto-damage">
 
       <img width="auto" height="119px" class="item none" src="assets/img/charms/Sharp_Shadow.png"/>
-      <div class="item auto">
+      <div class="item auto light-bg">
         Sharp Shadow
       </div>
-      <div  class="item auto">
+      <div  class="item auto light-bg">
         {{calculateSharpShadow()}}
         <br>
       </div>
     </div>
+
+  <!--Dreamshield-->
+  <div *ngIf="isDreamshield()"  class="item auto-damage">
+
+      <img width="auto" height="119px" class="item none" src="assets/img/charms/Dreamshield.png"/>
+      <div class="item auto light-bg">
+        Dreamshield
+      </div>
+      <div  class="item auto light-bg">
+        {{calculateDreamshield()}}
+        <br>
+    </div>
   </div>
 
-  <!--unbreakable strength pas sur les nails art, que sur le nail de base.-->
+  <!--weaversong-->
+  <div *ngIf="isWeaversong()"  class="item auto-damage">
+
+      <img width="auto" height="119px" class="item none" src="assets/img/charms/Weaversong.png"/>
+      <div class="item auto light-bg">
+        Weaversong
+      </div>
+      <div  class="item auto light-bg">
+        {{calculateWeaversong()}}
+        <br>
+    </div>
+  </div>
+
+  <!--Grimmchild-->
+  <div *ngIf="isGrimmchild()"  class="item auto-damage">
+      <img width="auto" height="119px" class="item none" src="assets/img/charms/Grimmchild.png"/>
+      <div class="item auto light-bg">
+        Grimmchild
+      </div>
+      <div  class="item auto light-bg">
+        {{calculateGrimmchild()}}
+        <br>
+    </div>
+  </div>
+
 
 </div>
