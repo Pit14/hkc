@@ -4,9 +4,11 @@
   <app-nail class='column flex-container' (selectedNailEvent)="receiveSelectedNail($event)"></app-nail>
   <app-life-mask  class='column'></app-life-mask>
   <app-notches class='column' (NumberOfNotchesEvent)="receiveNumberOfNotches($event)" (myEvent)="charm.resetCharmsList()"></app-notches>
-  <app-charms-equiped  class='column' [selectedCharms]="selectedCharms" [numberOfNotches]="numberOfNotches"></app-charms-equiped>
 
 </div>
+
+<app-charms-equiped  class='column' [selectedCharms]="selectedCharms" [numberOfNotches]="numberOfNotches"></app-charms-equiped>
+
 
 <app-charm #charm (selectedCharmsEvent)="receiveSelectedCharms($event)"
            (selectedCharmEvent)="receiveSelectedCharm($event)" [numberOfNotches]="numberOfNotches"></app-charm>

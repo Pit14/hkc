@@ -168,3 +168,10 @@ ng-select{
   background-color: #4d4d4d;
 }
 
+.sticky {
+  background: #595959;
+  position: fixed;
+  top: 0;
+  /*height: 120px;*/
+  width: 100%;
+}
