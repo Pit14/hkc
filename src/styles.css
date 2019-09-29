@@ -173,5 +173,21 @@ ng-select{
   position: fixed;
   top: 0;
   /*height: 120px;*/
+  margin-bottom: 200px;
   width: 100%;
 }
+
+.hidden {
+  display : none;
+}
+
+.below_sticky {
+
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  resize: none;
+}
+
+
+

@@ -1,4 +1,4 @@
-import {Component, DoCheck, Input, OnInit} from '@angular/core';
+import {Component, DoCheck, Input, OnInit, ViewChild, ElementRef, HostListener, AfterContentInit} from '@angular/core';
 import {Charm} from '../charm';
 import {CHARMS} from '../mock-data';
 
@@ -7,7 +7,18 @@ import {CHARMS} from '../mock-data';
   templateUrl: './charms-equipped.component.html',
   styleUrls: ['./charms-equipped.component.css']
 })
-export class CharmsEquippedComponent implements OnInit, DoCheck {
+export class CharmsEquippedComponent implements OnInit, DoCheck, AfterContentInit {
+
+  @ViewChild('stickyMenu') menuElement: ElementRef;
+  @ViewChild('belowStickyMenu') belowMenuElement: ElementRef;
+  @ViewChild('sticked') stickyDiv: ElementRef;
+  // @ViewChild('stickyMenu', {read: ElementRef}) menuElement: ElementRef;
+
+  sticky = false;
+  belowSticky = false;
+  elementPosition: any;
+  stickedDivHeight: number;
+  belowStickedDivHeight: number;
 
   @Input() selectedCharms: Charm[];
   numberOfNotchesEquipped = 0; // = this.countNotches();
@@ -15,10 +26,34 @@ export class CharmsEquippedComponent implements OnInit, DoCheck {
 
   constructor() { }
 
+  ngAfterContentInit() {
+    this.elementPosition = this.menuElement.nativeElement.offsetTop; // Probleme ici ? On récupères pas les bonnes coords, parents offset or something ?
+    this.stickedDivHeight = this.menuElement.nativeElement.offsetHeight;
+    console.log(this.stickedDivHeight);
+    this.belowStickedDivHeight = this.stickedDivHeight;
+
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  handleScroll() {
+    const windowScroll = window.pageYOffset;
+    console.log( 'Page Offset : ' + windowScroll);
+    console.log( 'Initial offset : ' +  this.elementPosition);
+    if (windowScroll >= this.elementPosition) {
+      this.sticky = true;
+      this.belowSticky = true;
+    } else {
+      this.sticky = false;
+      this.belowSticky = false;
+    }
+  }
+
   ngOnInit() {
      this.selectedCharms = CHARMS;
      this.numberOfNotchesEquipped = 0;
      this.numberOfNotches = 3;
+     this.stickedDivHeight = this.menuElement.nativeElement.offsetHeight;
+     console.log('cc : ' + this.stickedDivHeight);
   }
 
   countNotches() {
